@@ -1,0 +1,479 @@
+<%- include('partials/head')%>
+
+
+
+
+<!-- ##### Header Area Start ##### -->
+<header class="header_area">
+    <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
+        <!-- Classy Menu -->
+        <nav class="classy-navbar" id="essenceNav">
+            <!-- Logo -->
+            <a class="nav-brand" href="home"><img src="img/core-img/site-logo.png" alt=""></a>
+            <!-- Navbar Toggler -->
+            <div class="classy-navbar-toggler">
+                <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+            <!-- Menu -->
+            <div class="classy-menu">
+                <!-- close btn -->
+                <div class="classycloseIcon">
+                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                </div>
+                <!-- Nav Start -->
+                <div class="classynav">
+                    <ul>
+
+                        <li><a href="#">Pages</a>
+                            <ul class="dropdown">
+                                <li><a href="home">Home</a></li>
+                                <li><a href="shop">Shop</a></li>
+
+                                <li><a href="checkout">Checkout</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- Nav End -->
+            </div>
+        </nav>
+
+        <!-- Header Meta Data -->
+        <div class="header-meta d-flex clearfix justify-content-end">
+            <!-- Search Area -->
+            <div class="search-area">
+                <form action="#" method="post">
+                    <input type="search" name="search" id="headerSearch" placeholder="Type for search">
+                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <!-- Favourite Area -->
+            <div class="favourite-area">
+                <a href="#"><img src="img/core-img/heart.svg" alt=""></a>
+            </div>
+            <!-- User Login Info -->
+            <div class="dropdown">
+                <div class="user-login-info">
+                    <a href="#"><img src="img/core-img/user.svg" alt=""></a>
+                    <div class="dropdown-content">
+                        <button class="desc" id="logout" onclick="logOut()">Log Out</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Area -->
+            <div class="cart-area">
+                <a href="#" id="essenceCartBtn"><img src="img/core-img/bag.svg" alt=""> <span
+                        class="cart-item-quantity"></span></a>
+            </div>
+        </div>
+
+    </div>
+</header>
+<!-- ##### Header Area End ##### -->
+
+<!-- ##### Right Side Cart Area ##### -->
+<div class="cart-bg-overlay"></div>
+
+<div class="right-side-cart-area">
+
+    <!-- Cart Button -->
+    <div class="cart-button">
+        <a href="#" id="rightSideCart"><img src="img/core-img/bag.svg" alt=""> <span
+                class="cart-item-quantity"></span></a>
+    </div>
+
+    <div class="cart-content d-flex">
+
+        <!-- Cart List Area -->
+        <!-- Cart List Area -->
+        <div class="cart-list" id="cartList">
+
+
+
+            <!-- Single Cart Item -->
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-amount-summary">
+
+            <h2>Summary</h2>
+            <ul class="summary-table">
+                <li><span>subtotal:</span> <span id="subtotal"></span></li>
+                <li><span>delivery:</span> <span>Free</span></li>
+                <li><span>discount:</span> <span>-15%</span></li>
+                <li><span>total:</span> <span id="totalPrice"></span></li>
+            </ul>
+            <div class="checkout-btn mt-100">
+                <a href="checkout" class="btn essence-btn">check out</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Right Side Cart End ##### -->
+
+<!-- ##### Welcome Area Start ##### -->
+<section class="welcome_area bg-img background-overlay"
+    style="background-image: url(img/bg-img/iphone-12-gallery4-2021.jpg);">
+    <a href="shop">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="hero-content">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</section>
+<!-- ##### Welcome Area End ##### -->
+
+<!-- ##### Welcome Area Start ##### -->
+<section class="welcome_area bg-img background-overlay" style="background-image: url(img/bg-img/samsung-products.jpg);">
+    <a href="shop">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="hero-content">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</section>
+<!-- ##### Welcome Area End ##### -->
+
+<!-- ##### Welcome Area Start ##### -->
+<section class="welcome_area bg-img background-overlay" style="background-image: url(img/bg-img/xiaomi-poster.jpg);">
+    <a href="shop">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="hero-content">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</section>
+<!-- ##### Welcome Area End ##### -->
+
+
+<!-- ##### New Arrivals Area Start ##### -->
+
+<section class="new_arrivals_area section-padding-80 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h2>Popular Products</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="popular-products-slides owl-carousel">
+                    <% rows.forEach(function(row) {  %>
+                    <!-- Single Product -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="single-product-wrapper">
+                            <!-- Product Image -->
+                            <div class="product-img">
+                                <img src="<%= row.image %>" alt="">
+                                <!-- Hover Thumb -->
+                                <img class="hover-img" src="<%= row.image %>" alt="">
+
+                                <!-- Favourite -->
+                                <div class="">
+                                    <a href="shop" class=""></a>
+                                </div>
+                            </div>
+
+                            <!-- Product Description -->
+                            <div class="product-description">
+                                <span><%= row.brand %></span>
+                                <a href="shop">
+                                    <h6><%= row.product_name %></h6>
+                                </a>
+                                <p class="product-price">Rs. <%= row.price %></p>
+
+                                <!-- Hover Content -->
+                                <div class="hover-content">
+                                    <!-- Add to Cart -->
+                                    <div class="">
+                                        <a href="shop" class="" id="atc" onclick=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+<!-- ##### New Arrivals Area End ##### -->
+
+<!-- ##### Brands Area Start ##### -->
+<div class="brands-area d-flex align-items-center justify-content-between">
+    <!-- Brand Logo -->
+    <div class="single-brands-logo">
+        <a href="https://www.apple.com/"><img src="img/core-img/apple-logo.png" alt=""></a>
+    </div>
+    <!-- Brand Logo -->
+    <div class="single-brands-logo">
+        <a href="https://www.oneplus.com/pk"><img src="img/core-img/oneplus-logo.png" alt=""></a>
+    </div>
+    <!-- Brand Logo -->
+    <div class="single-brands-logo">
+        <a href="https://www.samsung.com/pk/smartphones/all-smartphones/"><img src="img/core-img/samsung-logo.png"
+                alt=""></a>
+    </div>
+    <!-- Brand Logo -->
+    <div class="single-brands-logo">
+        <a href="https://www.vivo.com/pk/"><img src="img/core-img/vivo-logo.png" alt=""></a>
+    </div>
+    <!-- Brand Logo -->
+    <div class="single-brands-logo">
+        <a href="https://www.mi.com/global/"><img src="img/core-img/xiaomi-logo.png" alt=""></a>
+    </div>
+    <!-- Brand Logo -->
+    <div class="single-brands-logo">
+        <a href="https://www.oppo.com/en/"><img src="img/core-img/oppo-logo.png" alt=""></a>
+
+    </div>
+</div>
+<!-- ##### Brands Area End ##### -->
+
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer_area clearfix">
+    <div class="container">
+        <div class="row">
+            <!-- Single Widget Area -->
+            <div class="col-12 col-md-6">
+                <div class="single_widget_area d-flex mb-30">
+                    <!-- Logo -->
+                    <div class="footer-logo mr-50">
+                        <a href="#"><img src="img/core-img/site-logo-2.png" alt=""></a>
+                    </div>
+                    <!-- Footer Menu -->
+                    <div class="footer_menu">
+                        <ul>
+                            <li><a href="shop">Shop</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Widget Area -->
+            <div class="col-12 col-md-6">
+                <div class="single_widget_area mb-30">
+                    <ul class="footer_widget_menu">
+                        <li><a href="#">Order Status</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                        <li><a href="#">Shipping and Delivery</a></li>
+                        <li><a href="#">Guides</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-end">
+            <!-- Single Widget Area -->
+            <div class="col-12 col-md-6">
+                <div class="single_widget_area">
+                    <div class="footer_heading mb-30">
+                        <h6>Subscribe</h6>
+                    </div>
+                    <div class="subscribtion_form">
+                        <form action="#" method="post">
+                            <input type="email" name="mail" class="mail" placeholder="Your email here">
+                            <button type="submit" class="submit"><i class="fa fa-long-arrow-right"
+                                    aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Widget Area -->
+            <div class="col-12 col-md-6">
+                <div class="single_widget_area">
+                    <div class="footer_social_area">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i
+                                class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i
+                                class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"
+                                aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i
+                                class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i
+                                class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
+                <p>
+
+                    Copyright &copy;<script>
+                        document.write(new Date().getFullYear());
+                    </script> All rights reserved
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- ##### Footer Area End ##### -->
+
+<script>
+    //logout
+
+
+    function logOut() {
+
+        $.get("http://localhost:3000/logout", function (data, status) {})
+        window.location.reload();
+    }
+
+
+
+
+
+
+
+    let temp = "<%= itemsId %>"
+    let itemId = [];
+    if (temp == null || temp == "") {
+        itemId = [];
+    } else {
+        itemId = "<%= itemsId %>".split(",");
+    }
+
+    let items = [];
+    var amount = 0;
+
+    let count = itemId.length;
+
+    populateCart(itemId, count);
+
+    function populateCart(itemId, count) {
+        $("#cartList").html("");
+        for (let i = 0; i < itemId.length; i++) {
+            $.get("http://localhost:3000/getProductById?id=" + itemId[i], function (data, status) {
+                //   alert("Data: " + data[0].product_name + "\nStatus: " + status);
+                // items.push(data[0]);
+
+                // populateCart(data,count);
+
+
+                // for (let i = 0; i < data.length; i++) {
+
+
+                html = ` <div class="single-cart-item">
+                    <a href="#" class="product-image">
+                        <img src="${data[0]["image"]}" class="cart-thumb" alt="">
+                        <!-- Cart Item Desc -->
+                        <div class="cart-item-desc">
+                            <span class="product-remove" id="close" onclick="removeItem(${i})"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="badge">${data[0]["brand"]}</span>
+                            <h6>${data[0]["product_name"]}</h6>
+                            <p class="size">${data[0]["memory"]}</p>
+                            <p class="color">${data[0]["color"]}</p>
+                            <p class="price">Rs.${data[0]["price"]}</p>
+                        </div>
+                    </a>
+                </div>`;
+
+                //for price calculation
+                // itemId.forEach(id => {
+                amount = amount + data[0]["price"]
+                // console.log( amount + " --- " + data[i]["price"]);
+                $("#subtotal").html('Rs. ' + amount)
+                $("#totalPrice").html('Rs. ' + amount)
+
+                // });
+                // console.log( amount + " --- " + data[i]["price"]);
+
+                //for adding item as html in cart
+                $("#cartList").append(html);
+                //for displaying items quantity in cart
+                $(".cart-item-quantity").html(count);
+                // }
+            })
+
+        }
+    }
+
+
+    function removeItem(id) {
+
+
+        // $.get("http://localhost:3000/getProductById?id="+id, function(item, status){
+
+        // let rmv = itemId.indexOf(id);
+        // console.log(rmv);
+        console.log(id);
+        itemId.splice(id, 1);
+        // console.log(itemId);
+        // console.log(itemId.splice(rmv, 1));
+
+        $('.product-remove').click(function (e) {
+
+            e.preventDefault();
+
+            //for removing selected item
+            $(this).closest('.single-cart-item').remove();
+
+            //for displaying no. of  remaining items in cart
+            $(".cart-item-quantity").html(itemId.length);
+
+            $.get("http://localhost:3000/removeItem?id=" + itemId, function (data, status) {
+                console.log("item deleted");
+            })
+
+        })
+
+        // }
+        // )        
+
+    }
+</script>
+
+<!-- jQuery (Necessary for All JavaScript Plugins) -->
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Classy Nav js -->
+<script src="js/classy-nav.min.js"></script>
+<!-- Active js -->
+<script src="js/active.js"></script>
+
+</body>
+<script>
+
+</script>
+
+</html>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<%- include('partials/head2')%>
+
+
+
+
+<% if (messages.error) { %>
+    <%= messages.error %>
+    <% } %>   
+
+<body>
+    <div class="containerr">
+        <img src="img/core-img/site-logo.png" alt="">
+        <div class="boxx">
+            <h1>Log In</h1>
+            <form action="/login" method="POST">
+            <div class="user">
+                <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required> <br> <br>
+                <input type="password" name="password" id="password" autocomplete="off" placeholder="password" required>
+            </div>
+            <p class="reset-password">Forgot Password</p>
+            <div class="login-Btn">
+                <button class="btn" type="submit"> Submit</button>
+            </form>
+                <p>First time here? <span> <a class="signup" href="signup"> Sign Up </a></span></p>
+            </div>
+
+
+        </div>
+
+    </div>
+    
+</body>
+
+
+</html>

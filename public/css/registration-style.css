@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    /* text-align: center; */
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    color: rgb(0, 0, 0);
+}
+.har{
+   
+    text-align: center;
+}
+h1{
+    font-weight: 900;
+    text-align: center;
+}
+.containerr{
+    margin-top: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    flex-direction: column;
+
+
+}
+
+.container{
+    margin-top: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    margin-bottom: 300px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    flex-direction: column;
+
+
+}
+.box{
+    width: 350px;
+    height: 1500px;
+    font-size: 16px;
+    padding: 40px 40px;
+    background: #fdfdff;
+    box-shadow: 0 4px 8px 0 rgb(202, 202, 202), 0 6px 20px 0 rgb(211, 211, 211);
+    border-radius: 10px;
+}
+.boxx{
+    width: 350px;
+    height: 390px;
+    font-size: 16px;
+    padding: 40px 40px;
+    background: #fdfdff;
+    box-shadow: 0 4px 8px 0 rgb(202, 202, 202), 0 6px 20px 0 rgba(211, 211, 211);
+    border-radius: 10px;
+}
+
+.user{
+    margin-top: 50px;
+}
+input{
+    width: 90%;
+    margin-bottom: 25px;
+    padding: 0px 30px 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #b8b8b8;
+    outline: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    transition: 0.3s all;
+}
+.input:focus{
+    border-bottom: 1px solid #ff7f50;
+
+}
+.reset-password{
+    color: #848484;
+    text-align: right;
+    margin-top: 0px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.reset-password:hover{
+    text-decoration: underline;
+    color: #ff7f50
+}
+.login-Btn{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+flex-direction:column;
+}
+.btn{
+    display: block;
+    width: 70%;
+    padding: 15px;
+    background-color: #ce2424;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600px;
+    opacity: 0.8;
+    transition: 0.2 all;
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: 1;
+}
+.signup  {
+    color: #0263d1;
+    cursor: pointer;
+    transition: 0.3s all;
+
+}
+.signup span:hover{
+    color: #3793df;
+}
+
+:placeholder-shown{
+    opacity: 50%;
+}
